@@ -144,13 +144,18 @@ If the selected experiment is for experiment 1, one of these python script shall
 
 ### Experiment 2
  If the selected experiment is for experiment 2, one of these python script shall be executed depends on the sort of container.
-  * For calculating DFG using neo4j, use 
-  * For calculating DFG using pm4py, use 
+  * For calculating DFG using neo4j, use [experiement2_neo4j.ipynb](./experiment1/experiement2_neo4j.ipynb)
+  * For calculating DFG using pm4py, use [experiement2_pm4py.ipynb](./experiment1/experiement2_neo4j.ipynb)
 
 ## remove the experiment from the list
+The executed experiement can be deleted from the list.
 
 ## compare the result
+The experiment results can be found in volume folder. We copied our result in the [ExperimentsResult folder](./ExperimentsResult)
 
+To visualize the result for these two experiments, these scripts can be used:
+  * For experiment 1, use [experiement1.ipynb](./ExperimentsResult/experiement1.ipynb)
+  * For experiment 2, use [experiement2.ipynb](./ExperimentsResult/experiement2.ipynb)
 
 # Note on the process
 The process for evaluation can be done manually or automatically. We described the manual version. The same procedure can be followed if you develop the build and release pipeline in DevOps to create containers, perform experiments and store the result.
