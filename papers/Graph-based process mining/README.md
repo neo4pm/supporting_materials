@@ -27,13 +27,78 @@ This process shall be followed through these steps:
 These steps are explained below.
 
 ## setup the environment
-Your docker needs to have access to your hard drive for mounting the volumes that store data for event repository. Note that you also need to assign enough CPUs and memory to your docker to be assigned for conatiners in the evaluation later.
+To run this process, you need to install docker on your computer. The docker needs to have access to your hard drive for mounting the volumes that store data for event repository. Note that you also need to assign enough CPUs and memory to your docker to be assigned for conatiners in the evaluation process. The CPU can be set to 5, and RAM can be set to 5 GB. 
+
+You also need to prepare the logs for both Pm4Py and neo4j.
+
+For PM4Py, download "clicks not logged" log from [BPIC 2016](https://www.win.tue.nl/bpi/doku.php?id=2016:challenge). We have used the CSV version of this log. 
+
+For neo4j, you need to create the event repository. To do so, , you can follow [the instruction here](../../sample_data/bpic2016/neo4j_event_repository/clicks_not_logged/README.md). Here is the code that is used in this paper to import the data. You can adjust the variables and path adn re-run it on your computer:
+
+```
+docker rm -f analysis
+rm ./data/* -r
+$root_dir = 'C:/workspace/neo4j/import_pm'
+docker run --name analysis -v $root_dir/data:/data -v $root_dir/import:/import -d neo4j:latest
+docker exec analysis neo4j-admin import --nodes=/import/nodes_log.csv --nodes=/import/nodes_trace.csv --nodes=/import/nodes_event.csv --nodes=/import/nodes_attribute.csv --relationships=/import/relations.csv  --delimiter=","
+docker rm -f analysis
+```
+
 
 ## define the experiments list
+There are two experiements in the evaluation section of this study, but both of them are based on calculating DFGs based on different parameters that we assign to containers. Thus, one list can be genrated to drive the whole study.
+
+The first experiemnt  calculate the DFGs based on the whole events in the logfile, and it consider CPU and RAM of conatienrs as variables. The CPU is assigned from range of 0.5 to 4.0 by adding 0.5 CPU each time. The RAM is assigned from range of 500 MB to 4000 MB by adding 500 MB RAM each time.
+The cartesian join of these two variables result in 64 individual experiements for the first experiment.
+
+The second experiemnt consider CPU and RAM as constant, and it calculate the DFGs based on sub-set of events. The repository is diced by filtering events by one day. Then, the dicing is continued by adding more days to the filter in an accumulative way to increase the number of events. As the number of events per day are not increased constantly, we use the number of events which was filtered for analysis.
+
+You can create this experiement list by hand, but if you like, you can run this python script to give you all required experiemnts. You can alter the parameters if you like as well.
+
+In total, 188 experiement is performed in the evaluation. The list can be found in experiement_list dataframe by executing this code:
+
+``` Python
+import numpy as np
+import pandas as pd
+import datetime
+
+CPU_min = 0.5
+CPU_max = 4
+
+RAM_min = 512
+RAM_max = 4096
+
+column_list = ['Experiment Number', 'Container', 'CPU', 'RAM', 'End Date']
+
+start_date = "7/1/2015"
+start_date = datetime.datetime.strptime(start_date, "%m/%d/%Y")
+
+containers = ['neo4j', 'PM4Py']
+
+experiement_list = pd.DataFrame(columns=column_list)
+
+for cpu in np.arange(CPU_min, CPU_max+CPU_min, CPU_min):
+    for ram in np.arange(RAM_min, RAM_max+RAM_min, RAM_min):
+        for cont in containers:
+            row = pd.DataFrame(np.array([['1', cont, cpu, ram, np.NaN]]), columns=column_list)
+            experiement_list = experiement_list.append(row)
+
+for i in range(0,30):
+    end_date = start_date + datetime.timedelta(days=i)
+    for cont in containers:
+        row = pd.DataFrame(np.array([['2', cont, CPU_max, RAM_max, end_date.date()]]), columns=column_list)
+        experiement_list = experiement_list.append(row)   
+```
 
 ## select an experiment from the list
+Now, you need to select one of the experiemensts in the experiement list.
 
 ## setup the environment
+
+
+### neo4j
+
+### PM4Py
 
 ## run the experiment
 
@@ -41,3 +106,6 @@ Your docker needs to have access to your hard drive for mounting the volumes tha
 
 ## compare the result
 
+
+# Note on the process
+The process for evaluation can be done manually or automatically. We described the manual version. The same procedure can be followed if you develop the build and release pipeline in DevOps to create containers, perform experiments and store the result.
