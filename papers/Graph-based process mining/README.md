@@ -134,11 +134,18 @@ We created another image from PM4Py to enable using jupyter lab for analysis.
 
 ## run the experiment
 
-There are different python scripts that you should execute for different containers to calculate the DFG.
+There are different python scripts that you should execute for different containers to calculate the DFG. The resutl are saved into the persisted volume for the final analysis, which is shown by Experiments result in the BPMN process. 
 
-### neo4j
+### Experiment 1
+If the selected experiment is for experiment 1, one of these python script shall be executed depends on the sort of container.
+  * For calculating DFG using neo4j, use [experiement1_neo4j.ipynb](./experiment1/experiement1_neo4j.ipynb)
+  * For calculating DFG using pm4py, use [experiement1_pm4py.ipynb](./experiment1/experiement1_neo4j.ipynb)
 
-### PM4Py
+
+### Experiment 2
+ If the selected experiment is for experiment 2, one of these python script shall be executed depends on the sort of container.
+  * For calculating DFG using neo4j, use 
+  * For calculating DFG using pm4py, use 
 
 ## remove the experiment from the list
 
