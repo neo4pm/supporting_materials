@@ -159,6 +159,3 @@ To visualize the result for these two experiments, these scripts can be used:
 
 # Note on the process
 The process for evaluation can be done manually or automatically. We described the manual version. The same procedure can be followed if you develop the build and release pipeline in DevOps to create containers, perform experiments and store the result.
-
-events:
-9329053
