@@ -31,14 +31,16 @@ To run this process, you need to install docker on your computer. The docker nee
 
 You also need to prepare the logs for both Pm4Py and neo4j.
 
-For PM4Py, download "clicks not logged" log from [BPIC 2016](https://www.win.tue.nl/bpi/doku.php?id=2016:challenge). We have used the CSV version of this log. 
+For PM4Py, download "clicks not logged" log from [BPIC 2016](https://www.win.tue.nl/bpi/doku.php?id=2016:challenge). We have used the CSV version of this log. Put this log file in the log sub-directory in the volume directory. The volume shall be mounted to docker.
 
-For neo4j, you need to create the event repository. To do so, , you can follow [the instruction here](../../sample_data/bpic2016/neo4j_event_repository/clicks_not_logged/README.md). Here is the code that is used in this paper to import the data. You can adjust the variables and path adn re-run it on your computer:
+For neo4j, you need to create the event repository. Cretae two sub-directories in the volume folder named data and import. Unzip the 7-zip files into import folder.  To do so, , you can follow [the instruction here](../../sample_data/bpic2016/neo4j_event_repository/clicks_not_logged/README.md). 
+
+Here is the code that is used in this paper to import the data. You can adjust the variables and path and re-run it on your computer:
 
 ```
-docker rm -f analysis
+cd '[Write the Volume directory in which your data and import folders for neo4j are created]'
 rm ./data/* -r
-$root_dir = 'C:/workspace/neo4j/import_pm'
+$root_dir = pwd
 docker run --name analysis -v $root_dir/data:/data -v $root_dir/import:/import -d neo4j:latest
 docker exec analysis neo4j-admin import --nodes=/import/nodes_log.csv --nodes=/import/nodes_trace.csv --nodes=/import/nodes_event.csv --nodes=/import/nodes_attribute.csv --relationships=/import/relations.csv  --delimiter=","
 docker rm -f analysis
@@ -95,12 +97,48 @@ Now, you need to select one of the experiemensts in the experiement list.
 
 ## setup the environment
 
+There are two different conatainser which are used in this study, i.e., neo4j and PM4Py. You need to run different containers and set the cpu and memory limits for it depends on the conatiner type that you create.
+
+### neo4j
+
+
+If you are creating an experiment for neo4j, you can run the conatiner using these commands:
+
+```
+cd '[Write the Volume directory]'
+$root_dir = pwd
+$cpu=[Write the CPU parameter]
+$neo_mem=[Write the RAM parameter]
+$memory = -join('"', $neo_mem, 'm"')
+docker run --name analysis --cpus $cpu --env CPU_LIMIT=$cpu --memory=$memory --env MEMORY_LIMIT=$memory -e NEO4J_AUTH=neo4j/1234 --env NEO4J_HEAP_MEMORY=$neo_mem --env NEO4J_CACHE_MEMORY=$memory --publish=7474:7474 --publish=7687:7687 -v $root_dir/data:/data  neo4j:latest 
+```
+
+### PM4Py
+If you are creating an experiment for PM4Py, you can run the conatiner using these commands:
+
+```
+cd '[Write the Volume directory in which your data and import folders for neo4j are created]'
+$root_dir = pwd
+
+$cpu=[Write the CPU parameter]
+$py_mem=[Write the RAM parameter]
+$memory = -join('"', $py_mem, 'm"')
+
+docker run --name analysis --cpus $cpu --env CPU_LIMIT=$cpu --memory=$memory --env MEMORY_LIMIT=$memory -v $root_dir/log:/data -d --rm -p 5000:5000 aminjalali/pm4py-jupyter
+docker logs analysis
+docker rm -f $(docker ps -aq)
+
+```
+
+We created another image from PM4Py to enable using jupyter lab for analysis.
+
+## run the experiment
+
+There are different python scripts that you should execute for different containers to calculate the DFG.
 
 ### neo4j
 
 ### PM4Py
-
-## run the experiment
 
 ## remove the experiment from the list
 
@@ -109,3 +147,6 @@ Now, you need to select one of the experiemensts in the experiement list.
 
 # Note on the process
 The process for evaluation can be done manually or automatically. We described the manual version. The same procedure can be followed if you develop the build and release pipeline in DevOps to create containers, perform experiments and store the result.
+
+events:
+9329053
