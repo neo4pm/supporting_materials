@@ -20,7 +20,7 @@ This process shall be followed through these steps:
   3.  The "select an experiment from the list" shall be performed to select an experiments and its parameters.
   4. The "setup the environment" shall be performed to set the analysis environment for the selected experiemnt.
   5. The "run the experiment" shall be performed to measure the performance.
-  6. The "remove the experiment from the list" shall be performed to remove the experiement from the list.
+  6. The "remove the experiment from the list" shall be performed to remove the experiment from the list.
   7. If the experiment list is empty, the process shall be repeated from step 3.
   8. All results shall be compared by performing the "compare the result" task.
 
@@ -48,16 +48,16 @@ docker rm -f analysis
 
 
 ## define the experiments list
-There are two experiements in the evaluation section of this study, but both of them are based on calculating DFGs based on different parameters that we assign to containers. Thus, one list can be genrated to drive the whole study.
+There are two experiments in the evaluation section of this study, but both of them are based on calculating DFGs based on different parameters that we assign to containers. Thus, one list can be genrated to drive the whole study.
 
 The first experiemnt  calculate the DFGs based on the whole events in the logfile, and it consider CPU and RAM of conatienrs as variables. The CPU is assigned from range of 0.5 to 4.0 by adding 0.5 CPU each time. The RAM is assigned from range of 500 MB to 4000 MB by adding 500 MB RAM each time.
-The cartesian join of these two variables result in 64 individual experiements for the first experiment.
+The cartesian join of these two variables result in 64 individual experiments for the first experiment.
 
 The second experiemnt consider CPU and RAM as constant, and it calculate the DFGs based on sub-set of events. The repository is diced by filtering events by one day. Then, the dicing is continued by adding more days to the filter in an accumulative way to increase the number of events. As the number of events per day are not increased constantly, we use the number of events which was filtered for analysis.
 
-You can create this experiement list by hand, but if you like, you can run this python script to give you all required experiemnts. You can alter the parameters if you like as well.
+You can create this experiment list by hand, but if you like, you can run this python script to give you all required experiemnts. You can alter the parameters if you like as well.
 
-In total, 188 experiement is performed in the evaluation. The list can be found in experiement_list dataframe by executing this code:
+In total, 188 experiment is performed in the evaluation. The list can be found in experiment_list dataframe by executing this code:
 
 ``` Python
 import numpy as np
@@ -77,23 +77,23 @@ start_date = datetime.datetime.strptime(start_date, "%m/%d/%Y")
 
 containers = ['neo4j', 'PM4Py']
 
-experiement_list = pd.DataFrame(columns=column_list)
+experiment_list = pd.DataFrame(columns=column_list)
 
 for cpu in np.arange(CPU_min, CPU_max+CPU_min, CPU_min):
     for ram in np.arange(RAM_min, RAM_max+RAM_min, RAM_min):
         for cont in containers:
             row = pd.DataFrame(np.array([['1', cont, cpu, ram, np.NaN]]), columns=column_list)
-            experiement_list = experiement_list.append(row)
+            experiment_list = experiment_list.append(row)
 
 for i in range(0,30):
     end_date = start_date + datetime.timedelta(days=i)
     for cont in containers:
         row = pd.DataFrame(np.array([['2', cont, CPU_max, RAM_max, end_date.date()]]), columns=column_list)
-        experiement_list = experiement_list.append(row)   
+        experiment_list = experiment_list.append(row)   
 ```
 
 ## select an experiment from the list
-Now, you need to select one of the experiemensts in the experiement list.
+Now, you need to select one of the experiemensts in the experiment list.
 
 ## setup the environment
 
@@ -138,24 +138,24 @@ There are different python scripts that you should execute for different contain
 
 ### Experiment 1
 If the selected experiment is for experiment 1, one of these python script shall be executed depends on the sort of container.
-  * For calculating DFG using neo4j, use [experiement1_neo4j.ipynb](./experiment1/experiement1_neo4j.ipynb)
-  * For calculating DFG using pm4py, use [experiement1_pm4py.ipynb](./experiment1/experiement1_neo4j.ipynb)
+  * For calculating DFG using neo4j, use [experiment1_neo4j.ipynb](./experiment1/experiment1_neo4j.ipynb)
+  * For calculating DFG using pm4py, use [experiment1_pm4py.ipynb](./experiment1/experiment1_neo4j.ipynb)
 
 
 ### Experiment 2
  If the selected experiment is for experiment 2, one of these python script shall be executed depends on the sort of container.
-  * For calculating DFG using neo4j, use [experiement2_neo4j.ipynb](./experiment1/experiement2_neo4j.ipynb)
-  * For calculating DFG using pm4py, use [experiement2_pm4py.ipynb](./experiment1/experiement2_neo4j.ipynb)
+  * For calculating DFG using neo4j, use [experiment2_neo4j.ipynb](./experiment1/experiment2_neo4j.ipynb)
+  * For calculating DFG using pm4py, use [experiment2_pm4py.ipynb](./experiment1/experiment2_neo4j.ipynb)
 
 ## remove the experiment from the list
-The executed experiement can be deleted from the list.
+The executed experiment can be deleted from the list.
 
 ## compare the result
 The experiment results can be found in volume folder. We copied our result in the [ExperimentsResult folder](./ExperimentsResult)
 
 To visualize the result for these two experiments, these scripts can be used:
-  * For experiment 1, use [experiement1.ipynb](./ExperimentsResult/experiement1.ipynb)
-  * For experiment 2, use [experiement2.ipynb](./ExperimentsResult/experiement2.ipynb)
+  * For experiment 1, use [experiment1.ipynb](./ExperimentsResult/experiment1.ipynb)
+  * For experiment 2, use [experiment2.ipynb](./ExperimentsResult/experiment2.ipynb)
 
 # Note on the process
 The process for evaluation can be done manually or automatically. We described the manual version. The same procedure can be followed if you develop the build and release pipeline in DevOps to create containers, perform experiments and store the result.
