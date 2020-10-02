@@ -139,13 +139,13 @@ There are different python scripts that you should execute for different contain
 ### Experiment 1
 If the selected experiment is for experiment 1, one of these python script shall be executed depends on the sort of container.
   * For calculating DFG using neo4j, use [experiment1_neo4j.ipynb](./experiment1/experiment1_neo4j.ipynb)
-  * For calculating DFG using pm4py, use [experiment1_pm4py.ipynb](./experiment1/experiment1_neo4j.ipynb)
+  * For calculating DFG using pm4py, use [experiment1_pm4py.ipynb](./experiment1/experiment1_pm4py.ipynb)
 
 
 ### Experiment 2
  If the selected experiment is for experiment 2, one of these python script shall be executed depends on the sort of container.
   * For calculating DFG using neo4j, use [experiment2_neo4j.ipynb](./experiment2/experiment2_neo4j.ipynb)
-  * For calculating DFG using pm4py, use [experiment2_pm4py.ipynb](./experiment2/experiment2_neo4j.ipynb)
+  * For calculating DFG using pm4py, use [experiment2_pm4py.ipynb](./experiment2/experiment2_pm4py.ipynb)
 
 ## remove the experiment from the list
 The executed experiment can be deleted from the list.
