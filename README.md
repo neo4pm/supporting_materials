@@ -1,8 +1,8 @@
 # Introduction
-This repository provides the materials for using neo4j for process mining. We aim to develop a new library (neo4pm) that supports mining processes using neo4j in the future.
+This repository stores some materials showing how neo4pm library can be used for different process mining tasks. 
 
 # Structure
-The repository is structured by two directories.
+The repository is structured by three directories.
 
 ## how to
 In this directory, you can find examples on how you can use neo4pm library.

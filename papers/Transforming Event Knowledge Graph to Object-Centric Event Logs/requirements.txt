@@ -1,0 +1,8 @@
+numpy
+pandas
+cvxopt==1.3.0.1
+pm4py
+py2neo
+neo4pm
+jupyter
+jupyterlab
