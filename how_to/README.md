@@ -5,3 +5,4 @@ Here, you can find examples on how to use neo4pm library.
 2. [converting the log file and importing data as batch to neo4j](./import_batch/README.md)
 3. [querying DFG](./query_dfg/README.md)
 4. [Visualizing result using PM4Py](./using_pm4py_and_neo4pm/README.md)
+5. [Transforming Multi-dimensional Event Knowledge Graph to OCEL](./lpg2ocel_batch/README.md)

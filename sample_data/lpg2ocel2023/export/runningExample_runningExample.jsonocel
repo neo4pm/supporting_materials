@@ -1,0 +1,630 @@
+{
+  "ocel:global-event": {
+    "ocel:activity": "__INVALID__"
+  },
+  "ocel:global-object": {
+    "ocel:type": "__INVALID__"
+  },
+  "ocel:global-log": {
+    "ocel:object-types": [
+      "Order",
+      "Item",
+      "Package",
+      "Route"
+    ],
+    "ocel:attribute-names": [
+      "EventID",
+      "Item1",
+      "Item2",
+      "Item3",
+      "Order",
+      "Package",
+      "Route",
+      "SubLog",
+      "idx"
+    ],
+    "ocel:version": "1.0",
+    "ocel:ordering": "timestamp"
+  },
+  "ocel:events": {
+    "0": {
+      "ocel:activity": "place order",
+      "ocel:timestamp": "2019-07-20T07:15:00",
+      "ocel:vmap": {
+        "EventID": 9911.0,
+        "Item1": "i1",
+        "Item2": "i2",
+        "Order": "o1",
+        "SubLog": "Order-Payment",
+        "idx": 0.0
+      },
+      "ocel:omap": [
+        "40",
+        "43",
+        "45"
+      ]
+    },
+    "1": {
+      "ocel:activity": "check availability",
+      "ocel:timestamp": "2019-07-20T08:35:00",
+      "ocel:vmap": {
+        "EventID": 9912.0,
+        "Item1": "i1",
+        "SubLog": "Order-Payment",
+        "idx": 1.0
+      },
+      "ocel:omap": [
+        "43"
+      ]
+    },
+    "2": {
+      "ocel:activity": "place order",
+      "ocel:timestamp": "2019-07-20T08:38:00",
+      "ocel:vmap": {
+        "EventID": 9913.0,
+        "Item1": "i3",
+        "Item2": "i4",
+        "Item3": "i5",
+        "Order": "o2",
+        "SubLog": "Order-Payment",
+        "idx": 2.0
+      },
+      "ocel:omap": [
+        "41",
+        "44",
+        "46",
+        "47"
+      ]
+    },
+    "3": {
+      "ocel:activity": "check availability",
+      "ocel:timestamp": "2019-07-20T09:20:00",
+      "ocel:vmap": {
+        "EventID": 9914.0,
+        "Item1": "i2",
+        "SubLog": "Order-Payment",
+        "idx": 3.0
+      },
+      "ocel:omap": [
+        "45"
+      ]
+    },
+    "4": {
+      "ocel:activity": "pick item",
+      "ocel:timestamp": "2019-07-20T10:05:00",
+      "ocel:vmap": {
+        "EventID": 9915.0,
+        "Item1": "i1",
+        "SubLog": "Order-Payment",
+        "idx": 4.0
+      },
+      "ocel:omap": [
+        "43"
+      ]
+    },
+    "5": {
+      "ocel:activity": "check availability",
+      "ocel:timestamp": "2019-07-20T10:19:00",
+      "ocel:vmap": {
+        "EventID": 9916.0,
+        "Item1": "i3",
+        "SubLog": "Order-Payment",
+        "idx": 5.0
+      },
+      "ocel:omap": [
+        "44"
+      ]
+    },
+    "6": {
+      "ocel:activity": "pick item",
+      "ocel:timestamp": "2019-07-20T10:55:00",
+      "ocel:vmap": {
+        "EventID": 9917.0,
+        "Item1": "i3",
+        "SubLog": "Order-Payment",
+        "idx": 6.0
+      },
+      "ocel:omap": [
+        "44"
+      ]
+    },
+    "7": {
+      "ocel:activity": "check availability",
+      "ocel:timestamp": "2019-07-20T12:15:00",
+      "ocel:vmap": {
+        "EventID": 9918.0,
+        "Item1": "i4",
+        "SubLog": "Order-Payment",
+        "idx": 7.0
+      },
+      "ocel:omap": [
+        "46"
+      ]
+    },
+    "8": {
+      "ocel:activity": "pick item",
+      "ocel:timestamp": "2019-07-20T13:25:00",
+      "ocel:vmap": {
+        "EventID": 9919.0,
+        "Item1": "i4",
+        "SubLog": "Order-Payment",
+        "idx": 8.0
+      },
+      "ocel:omap": [
+        "46"
+      ]
+    },
+    "9": {
+      "ocel:activity": "check availability",
+      "ocel:timestamp": "2019-07-20T14:25:00",
+      "ocel:vmap": {
+        "EventID": 9920.0,
+        "Item1": "i5",
+        "SubLog": "Order-Payment",
+        "idx": 9.0
+      },
+      "ocel:omap": [
+        "47"
+      ]
+    },
+    "10": {
+      "ocel:activity": "check availability",
+      "ocel:timestamp": "2019-07-20T15:34:00",
+      "ocel:vmap": {
+        "EventID": 9921.0,
+        "Item1": "i2",
+        "SubLog": "Order-Payment",
+        "idx": 10.0
+      },
+      "ocel:omap": [
+        "45"
+      ]
+    },
+    "11": {
+      "ocel:activity": "pick item",
+      "ocel:timestamp": "2019-07-20T15:38:00",
+      "ocel:vmap": {
+        "EventID": 9922.0,
+        "Item1": "i2",
+        "SubLog": "Order-Payment",
+        "idx": 11.0
+      },
+      "ocel:omap": [
+        "45"
+      ]
+    },
+    "12": {
+      "ocel:activity": "pack items",
+      "ocel:timestamp": "2019-07-20T15:44:00",
+      "ocel:vmap": {
+        "EventID": 9923.0,
+        "Item1": "i1",
+        "Item2": "i2",
+        "Item3": "i3",
+        "Package": "p1",
+        "SubLog": "Order-Payment",
+        "idx": 12.0
+      },
+      "ocel:omap": [
+        "43",
+        "45",
+        "44",
+        "49"
+      ]
+    },
+    "13": {
+      "ocel:activity": "store package",
+      "ocel:timestamp": "2019-07-20T15:55:00",
+      "ocel:vmap": {
+        "EventID": 9924.0,
+        "Package": "p1",
+        "SubLog": "Order-Payment",
+        "idx": 13.0
+      },
+      "ocel:omap": [
+        "49"
+      ]
+    },
+    "14": {
+      "ocel:activity": "start route",
+      "ocel:timestamp": "2019-07-20T15:56:00",
+      "ocel:vmap": {
+        "EventID": 9925.0,
+        "Route": "r1",
+        "SubLog": "Order-Payment",
+        "idx": 14.0
+      },
+      "ocel:omap": [
+        "51"
+      ]
+    },
+    "15": {
+      "ocel:activity": "load package",
+      "ocel:timestamp": "2019-07-21T07:00:00",
+      "ocel:vmap": {
+        "EventID": 9926.0,
+        "Package": "p1",
+        "Route": "r1",
+        "SubLog": "Order-Payment",
+        "idx": 15.0
+      },
+      "ocel:omap": [
+        "49",
+        "51"
+      ]
+    },
+    "16": {
+      "ocel:activity": "send invoice",
+      "ocel:timestamp": "2019-07-21T07:17:00",
+      "ocel:vmap": {
+        "EventID": 9927.0,
+        "Order": "o1",
+        "SubLog": "Order-Payment",
+        "idx": 16.0
+      },
+      "ocel:omap": [
+        "40"
+      ]
+    },
+    "17": {
+      "ocel:activity": "place order",
+      "ocel:timestamp": "2019-07-21T07:25:00",
+      "ocel:vmap": {
+        "EventID": 9928.0,
+        "Item1": "i6",
+        "Order": "o3",
+        "SubLog": "Order-Payment",
+        "idx": 17.0
+      },
+      "ocel:omap": [
+        "42",
+        "48"
+      ]
+    },
+    "18": {
+      "ocel:activity": "failed delivery",
+      "ocel:timestamp": "2019-07-21T07:33:00",
+      "ocel:vmap": {
+        "EventID": 9929.0,
+        "Package": "p1",
+        "Route": "r1",
+        "SubLog": "Order-Payment",
+        "idx": 18.0
+      },
+      "ocel:omap": [
+        "49",
+        "51"
+      ]
+    },
+    "19": {
+      "ocel:activity": "unload package",
+      "ocel:timestamp": "2019-07-21T07:56:00",
+      "ocel:vmap": {
+        "EventID": 9930.0,
+        "Package": "p1",
+        "Route": "r1",
+        "SubLog": "Order-Payment",
+        "idx": 19.0
+      },
+      "ocel:omap": [
+        "49",
+        "51"
+      ]
+    },
+    "20": {
+      "ocel:activity": "end route",
+      "ocel:timestamp": "2019-07-21T08:15:00",
+      "ocel:vmap": {
+        "EventID": 9931.0,
+        "Route": "r1",
+        "SubLog": "Order-Payment",
+        "idx": 20.0
+      },
+      "ocel:omap": [
+        "51"
+      ]
+    },
+    "21": {
+      "ocel:activity": "check availability",
+      "ocel:timestamp": "2019-07-21T09:25:00",
+      "ocel:vmap": {
+        "EventID": 9932.0,
+        "Item1": "i6",
+        "SubLog": "Order-Payment",
+        "idx": 21.0
+      },
+      "ocel:omap": [
+        "48"
+      ]
+    },
+    "22": {
+      "ocel:activity": "receive payment",
+      "ocel:timestamp": "2019-07-21T10:55:00",
+      "ocel:vmap": {
+        "EventID": 9933.0,
+        "Order": "o1",
+        "SubLog": "Order-Payment",
+        "idx": 22.0
+      },
+      "ocel:omap": [
+        "40"
+      ]
+    },
+    "23": {
+      "ocel:activity": "check availability",
+      "ocel:timestamp": "2019-07-22T07:19:00",
+      "ocel:vmap": {
+        "EventID": 9934.0,
+        "Item1": "i5",
+        "SubLog": "Order-Payment",
+        "idx": 23.0
+      },
+      "ocel:omap": [
+        "47"
+      ]
+    },
+    "24": {
+      "ocel:activity": "pick item",
+      "ocel:timestamp": "2019-07-22T07:44:00",
+      "ocel:vmap": {
+        "EventID": 9935.0,
+        "Item1": "i5",
+        "SubLog": "Order-Payment",
+        "idx": 24.0
+      },
+      "ocel:omap": [
+        "47"
+      ]
+    },
+    "25": {
+      "ocel:activity": "send invoice",
+      "ocel:timestamp": "2019-07-22T07:55:00",
+      "ocel:vmap": {
+        "EventID": 9936.0,
+        "Order": "o2",
+        "SubLog": "Order-Payment",
+        "idx": 25.0
+      },
+      "ocel:omap": [
+        "41"
+      ]
+    },
+    "26": {
+      "ocel:activity": "receive payment",
+      "ocel:timestamp": "2019-07-22T08:15:00",
+      "ocel:vmap": {
+        "EventID": 9937.0,
+        "Order": "o2",
+        "SubLog": "Order-Payment",
+        "idx": 26.0
+      },
+      "ocel:omap": [
+        "41"
+      ]
+    },
+    "27": {
+      "ocel:activity": "check availability",
+      "ocel:timestamp": "2019-07-22T09:35:00",
+      "ocel:vmap": {
+        "EventID": 9938.0,
+        "Item1": "i6",
+        "SubLog": "Order-Payment",
+        "idx": 27.0
+      },
+      "ocel:omap": [
+        "48"
+      ]
+    },
+    "28": {
+      "ocel:activity": "pick item",
+      "ocel:timestamp": "2019-07-22T10:23:00",
+      "ocel:vmap": {
+        "EventID": 9939.0,
+        "Item1": "i6",
+        "SubLog": "Order-Payment",
+        "idx": 28.0
+      },
+      "ocel:omap": [
+        "48"
+      ]
+    },
+    "29": {
+      "ocel:activity": "pack items",
+      "ocel:timestamp": "2019-07-23T08:11:00",
+      "ocel:vmap": {
+        "EventID": 9941.0,
+        "Item1": "i4",
+        "Item2": "i5",
+        "Item3": "i6",
+        "Package": "p2",
+        "SubLog": "Order-Payment",
+        "idx": 29.0
+      },
+      "ocel:omap": [
+        "46",
+        "47",
+        "48",
+        "50"
+      ]
+    },
+    "30": {
+      "ocel:activity": "send invoice",
+      "ocel:timestamp": "2019-07-22T10:45:00",
+      "ocel:vmap": {
+        "EventID": 9942.0,
+        "Order": "o3",
+        "SubLog": "Order-Payment",
+        "idx": 30.0
+      },
+      "ocel:omap": [
+        "42"
+      ]
+    },
+    "31": {
+      "ocel:activity": "store package",
+      "ocel:timestamp": "2019-07-23T08:19:00",
+      "ocel:vmap": {
+        "EventID": 9943.0,
+        "Package": "p2",
+        "SubLog": "Order-Payment",
+        "idx": 31.0
+      },
+      "ocel:omap": [
+        "50"
+      ]
+    },
+    "32": {
+      "ocel:activity": "start route",
+      "ocel:timestamp": "2019-07-23T08:28:00",
+      "ocel:vmap": {
+        "EventID": 9944.0,
+        "Route": "r2",
+        "SubLog": "Order-Payment",
+        "idx": 32.0
+      },
+      "ocel:omap": [
+        "52"
+      ]
+    },
+    "33": {
+      "ocel:activity": "load package",
+      "ocel:timestamp": "2019-07-23T09:05:00",
+      "ocel:vmap": {
+        "EventID": 9945.0,
+        "Package": "p1",
+        "Route": "r2",
+        "SubLog": "Order-Payment",
+        "idx": 33.0
+      },
+      "ocel:omap": [
+        "49",
+        "52"
+      ]
+    },
+    "34": {
+      "ocel:activity": "load package",
+      "ocel:timestamp": "2019-07-23T09:09:00",
+      "ocel:vmap": {
+        "EventID": 9946.0,
+        "Package": "p2",
+        "Route": "r2",
+        "SubLog": "Order-Payment",
+        "idx": 34.0
+      },
+      "ocel:omap": [
+        "50",
+        "52"
+      ]
+    },
+    "35": {
+      "ocel:activity": "deliver package",
+      "ocel:timestamp": "2019-07-23T10:25:00",
+      "ocel:vmap": {
+        "EventID": 9947.0,
+        "Package": "p2",
+        "Route": "r2",
+        "SubLog": "Order-Payment",
+        "idx": 35.0
+      },
+      "ocel:omap": [
+        "50",
+        "52"
+      ]
+    },
+    "36": {
+      "ocel:activity": "deliver package",
+      "ocel:timestamp": "2019-07-24T08:37:00",
+      "ocel:vmap": {
+        "EventID": 9948.0,
+        "Package": "p1",
+        "Route": "r2",
+        "SubLog": "Order-Payment",
+        "idx": 36.0
+      },
+      "ocel:omap": [
+        "49",
+        "52"
+      ]
+    },
+    "37": {
+      "ocel:activity": "end route",
+      "ocel:timestamp": "2019-07-24T08:48:00",
+      "ocel:vmap": {
+        "EventID": 9949.0,
+        "Route": "r2",
+        "SubLog": "Order-Payment",
+        "idx": 37.0
+      },
+      "ocel:omap": [
+        "52"
+      ]
+    },
+    "38": {
+      "ocel:activity": "receive payment",
+      "ocel:timestamp": "2019-07-24T08:55:00",
+      "ocel:vmap": {
+        "EventID": 9950.0,
+        "Order": "o3",
+        "SubLog": "Order-Payment",
+        "idx": 38.0
+      },
+      "ocel:omap": [
+        "42"
+      ]
+    }
+  },
+  "ocel:objects": {
+    "40": {
+      "ocel:type": "Order",
+      "ocel:ovmap": {}
+    },
+    "41": {
+      "ocel:type": "Order",
+      "ocel:ovmap": {}
+    },
+    "42": {
+      "ocel:type": "Order",
+      "ocel:ovmap": {}
+    },
+    "43": {
+      "ocel:type": "Item",
+      "ocel:ovmap": {}
+    },
+    "44": {
+      "ocel:type": "Item",
+      "ocel:ovmap": {}
+    },
+    "45": {
+      "ocel:type": "Item",
+      "ocel:ovmap": {}
+    },
+    "46": {
+      "ocel:type": "Item",
+      "ocel:ovmap": {}
+    },
+    "47": {
+      "ocel:type": "Item",
+      "ocel:ovmap": {}
+    },
+    "48": {
+      "ocel:type": "Item",
+      "ocel:ovmap": {}
+    },
+    "49": {
+      "ocel:type": "Package",
+      "ocel:ovmap": {}
+    },
+    "50": {
+      "ocel:type": "Package",
+      "ocel:ovmap": {}
+    },
+    "51": {
+      "ocel:type": "Route",
+      "ocel:ovmap": {}
+    },
+    "52": {
+      "ocel:type": "Route",
+      "ocel:ovmap": {}
+    }
+  }
+}
