@@ -73,6 +73,9 @@ pip install -r requirements.txt
 
 Once the script is executed, the transformed file will be written to the export folder. The runningExample.csv file is provided in the data folder. 
 
+We also provided the results of transformation datasets publicly available. You can find the link for downloading datasets [here](./datasets/README.md).
+
+result of transforming the BPI Challenge 2014 event log from Event Graph format to Object-Centric Event Log (OCEL) format. 
 
 ## Step 5. Evaluation
 
