@@ -12,11 +12,9 @@ Jalali, A. (2021). Graph-Based Process Mining. In: Leemans, S., Leopold, H. (eds
 ```
 
 ## Transforming Event Knowledge Graph to Object-Centric Event Log: A Comparative Study for Multi-dimensional Process Analysis
-This folder contains all the instructions for repeating the evaluation sections of the paper "Transforming Event Knowledge Graph to Object-Centric Event Log: A Comparative Study for Multi-dimensional Process Analysis". 
-
-The link for the author-copy and published version will be available soon.
+This folder contains all the instructions for repeating the evaluation sections of the paper "Transforming Event Knowledge Graph to Object-Centric Event Log: A Comparative Study for Multi-dimensional Process Analysis" paper. Hera, you can find the [author-copy version](https://www.researchgate.net/publication/375067626_Transforming_Event_Knowledge_Graph_to_Object-Centric_Event_Logs_A_Comparative_Study_for_Multi-dimensional_Process_Analysis). 
 
 You can cite this paper by:
 ```
-coming soon
+Khayatbashi, S., Hartig, O., & Jalali, A. (2023, October). Transforming event knowledge graph to object-centric event logs: A comparative study for multi-dimensional process analysis. In International Conference on Conceptual Modeling (pp. 220-238). Cham: Springer Nature Switzerland.
 ```
