@@ -1,6 +1,13 @@
 ## Introduction
 This folder contains all the instructions for repeating the evaluation sections of the paper "ransforming Event Knowledge Graph to Object-Centric Event Log: A Comparative Study for Multi-dimensional Process Analysis". 
 
+Here, you can find the [author-copy version](https://www.researchgate.net/publication/375067626_Transforming_Event_Knowledge_Graph_to_Object-Centric_Event_Logs_A_Comparative_Study_for_Multi-dimensional_Process_Analysis).
+
+You can cite this paper by:
+```
+Khayatbashi, S., Hartig, O., & Jalali, A. (2023, October). Transforming event knowledge graph to object-centric event logs: A comparative study for multi-dimensional process analysis. In International Conference on Conceptual Modeling (pp. 220-238). Cham: Springer Nature Switzerland.
+```
+
 ## Step 1. Getting the datasets
 In this paper, we used five real-world EKG data sets about BPICs challenges. Data is available online as dump files. In the links below, you can download each of the BPICs. In each link, at the bottom of the page, you need to download the files with the extension of **.dump**.
 
